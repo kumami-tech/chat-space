@@ -68,3 +68,10 @@
 
 - belongs_to :user
 - belongs_to :group
+
+## members_groups テーブル
+
+| Column    | Type    | Options                       |
+| --------- | ------- | ----------------------------- |
+| member_id | integer | null:false, foreign_key: true |
+| group_id  | integer | null:false, foreign_key: true |
