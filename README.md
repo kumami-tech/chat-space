@@ -32,9 +32,10 @@
 
 ## members テーブル
 
-| Column      | Type   | Options    |
-| ----------- | ------ | ---------- |
-| member_name | string | null:false |
+| Column      | Type   | Options                       |
+| ----------- | ------ | ----------------------------- |
+| member_name | string | null:false                    |
+| group_id    | string | null:false, foreign_key: true |
 
 ### Association
 
