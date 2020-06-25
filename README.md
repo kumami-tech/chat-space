@@ -39,8 +39,6 @@
 - has_many :messages
 - has_many :users_groups
 - has_many :users, through: :users_groups
-- has_many :members_groups
-- has_many :members, through: :members_groups
 
 ## users_groups テーブル
 
