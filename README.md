@@ -56,3 +56,10 @@
 - has_many :users, through: :users_groups
 - has_many :members_groups
 - has_many :members, through: :members_groups
+
+## users_groups テーブル
+
+| Column   | Type    | Options                       |
+| -------- | ------- | ----------------------------- |
+| user_id  | integer | null:false, foreign_key: true |
+| group_id | integer | null:false, foreign_key: true |
