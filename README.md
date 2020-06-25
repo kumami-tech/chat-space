@@ -30,11 +30,9 @@
 
 ## groups テーブル
 
-| Column    | Type    | Options                       |
-| --------- | ------- | ----------------------------- |
-| name      | string  | null:false                    |
-| user_id   | integer | null:false, foreign_key: true |
-| member_id | integer | null:false, foreign_key: true |
+| Column | Type   | Options    |
+| ------ | ------ | ---------- |
+| name   | string | null:false |
 
 ### Association
 
