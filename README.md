@@ -28,3 +28,9 @@
 - has_many :messages
 - has_many :users_groups
 - has_many :groups, through: :users_groups
+
+## members テーブル
+
+| Column      | Type   | Options    |
+| ----------- | ------ | ---------- |
+| member_name | string | null:false |
