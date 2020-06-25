@@ -34,3 +34,10 @@
 | Column      | Type   | Options    |
 | ----------- | ------ | ---------- |
 | member_name | string | null:false |
+
+### Association
+
+- has_many :messages
+- has_many :messages
+- has_many :members_groups
+- has_many :groups, through: :members_groups
