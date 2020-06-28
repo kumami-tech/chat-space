@@ -1,0 +1,17 @@
+.Side_bar
+   .Side_bar__header
+      .Side_bar__header__box
+         .Side_bar__header__box__user_name
+            %span<>
+               masa
+         .Side_bar__header__box__icons
+            = link_to "#", class: "Side_bar__header__box__icons__btn Side_bar__header__box__icons__btn--edit" do
+               = icon('far', 'edit',  class: "Side_bar__header__box__icons__btn--icon")
+            = link_to "#", class: "Side_bar__header__box__icons__btn Side_bar__header__box__icons__btn--settings" do
+               = icon('fas', 'cog',  class: "Side_bar__header__box__icons__btn--icon")
+   .Side_bar__list
+      .Side_bar__list__box
+         .Side_bar__list__box__group_name
+            techcamp
+         .Side_bar__list__box__message
+            まだメッセージがありません
