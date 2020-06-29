@@ -2,12 +2,11 @@
    .Side_bar__header
       .Side_bar__header__box
          .Side_bar__header__box__user_name
-            %span<>
-               masa
+            = current_user.name
          .Side_bar__header__box__icons
             = link_to "#", class: "Side_bar__header__box__icons__btn Side_bar__header__box__icons__btn--edit" do
                = icon('far', 'edit',  class: "Side_bar__header__box__icons__btn--icon")
-            = link_to "#", class: "Side_bar__header__box__icons__btn Side_bar__header__box__icons__btn--settings" do
+            = link_to edit_user_path(current_user), class: "Side_bar__header__box__icons__btn Side_bar__header__box__icons__btn--settings" do
                = icon('fas', 'cog',  class: "Side_bar__header__box__icons__btn--icon")
    .Side_bar__list
       .Side_bar__list__box
