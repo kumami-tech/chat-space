@@ -1,37 +1,13 @@
 .Main_chat
   .Main_chat__header
-    .Main_chat__header__leftbox
-      .Main_chat__header__leftbox__group_name
-        test
-      %ul.Main_chat__header__leftbox__member_list
-        Member :
-        %li.Main_chat__header__leftbox__member_list__name
-          masa
-    .Main_chat__header__btn
-      = link_to "http://localhost:3000/groups/1/edit", class: "Main_chat__header__btn--edit" do
-        Edit
+    = render 'main_header'
   .Main_chat__content
-    .Main_chat__content__box
-      .Main_chat__content__box__info
-        .Main_chat__content__box__info__user_name
-          masa
-        .Main_chat__content__box__info__timestamps
-          2019/11/20(Wed) 17:43:01
-      .Main_chat__content__box__message
-        おはよう！
-    .Main_chat__content__box
-      .Main_chat__content__box__info
-        .Main_chat__content__box__info__user_name
-          masa
-        .Main_chat__content__box__info__timestamps
-          2019/11/20(Wed) 17:43:34
-      .Main_chat__content__box__message
-        今日は夜から雨
+    = render @messages
   .Main_chat__form
-    %form.Main_chat__form__contents
+    = form_with model: [@group, @message], html: {class: "Main_chat__form__contents"}, local: true do |f|
       .Main_chat__form__contents__input
-        %input.Main_chat__form__contents__input__text{type: "text", placeholder: "type a message"}
-        %label.Main_chat__form__contents__input__image
-          = icon('fas', 'image')
-          %input.Main_chat__form__contents__input__image__file{type: "file"}
-      %input.Main_chat__form__contents__btn{type: "submit", value: "Send"}
+        = f.text_field :content, class: 'Main_chat__form__contents__input__text', placeholder: 'type a message'
+        = f.label :image, class: 'Main_chat__form__contents__input__image' do
+          = icon('far', 'image', class: 'Main_chat__form__contents__input__icon')
+          = f.file_field :image, class: 'Main_chat__form__contents__input__image__file'
+      = f.submit 'Send', class: 'Main_chat__form__contents__btn'
