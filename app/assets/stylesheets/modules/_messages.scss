@@ -49,10 +49,15 @@ $light_blue: #38aef0;
       width: 300px;
       padding: 20px 20px 40px;
       color: $white;
+      &__link {
+        text-decoration: none;
+      }
       &__group_name {
+        color: $white;
         font-size: 15px;
       }
       &__message {
+        color: $white;
         font-size: 11px;
       }
     }
