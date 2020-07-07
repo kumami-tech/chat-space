@@ -40,7 +40,6 @@ $(function(){
     };
   }
   $('.Main_chat__form__contents').on('submit', function(e){
-    console.log(this)
     e.preventDefault();
     let formData = new FormData(this);
     let url = $(this).attr('action');
