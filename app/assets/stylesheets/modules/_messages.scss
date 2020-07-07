@@ -112,6 +112,7 @@ $light_blue: #38aef0;
   &__content {
     height: calc(100vh - 190px);
     background-color: #fafafa;
+    overflow: scroll;
     &__box {
       padding: 35px 40px 11px;
       &__info {
