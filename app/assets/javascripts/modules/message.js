@@ -62,28 +62,4 @@ $(function(){
       alert("メッセージ送信に失敗しました");
     })
   });
-
-  let reloadMessages = function() {
-    let last_message_id = $('.Main_chat__content__box:last').data("message-id");
-    $.ajax({
-      url: "api/messages",
-      type: 'get',
-      dataType: 'json',
-      data: {id: last_message_id}
-    })
-    .done(function(messages) {
-      if (messages.length !== 0) {
-        let insertHTML = '';
-        //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
-        $.each(messages, function(i, message) {
-          insertHTML += buildHTML(message)
-        });
-        //メッセージが入ったHTMLに、入れ物ごと追加
-        $('.Main_chat__content').append(insertHTML);
-      }
-    })
-    .fail(function() {
-      alert('error');
-    });
-  };
 });
