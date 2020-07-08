@@ -2,7 +2,7 @@ $(function(){
   function buildHTML(message){
     if ( message.image ) {
       let html = 
-        `<div class="Main_chat__content__box">
+        `<div class="Main_chat__content__box" data-message-id=${message.id}>
           <div class="Main_chat__content__box__info">
             <div class="Main_chat__content__box__info__user_name">
               // ${message.user_name}
@@ -21,7 +21,7 @@ $(function(){
       return html;
     } else {
       let html =
-      `<div class="Main_chat__content__box">
+      `<div class="Main_chat__content__box" data-message-id=${message.id}>
         <div class="Main_chat__content__box__info">
           <div class="Main_chat__content__box__info__user_name">
             ${message.user_name}
@@ -72,7 +72,15 @@ $(function(){
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      console.log('success');
+      if (messages.length !== 0) {
+        let insertHTML = '';
+        //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
+        $.each(messages, function(i, message) {
+          insertHTML += buildHTML(message)
+        });
+        //メッセージが入ったHTMLに、入れ物ごと追加
+        $('.Main_chat__content').append(insertHTML);
+      }
     })
     .fail(function() {
       alert('error');
