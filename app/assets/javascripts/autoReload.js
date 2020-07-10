@@ -5,7 +5,7 @@ $(function(){
         `<div class="Main_chat__content__box" data-message-id=${message.id}>
           <div class="Main_chat__content__box__info">
             <div class="Main_chat__content__box__info__user_name">
-              // ${message.user_name}
+              ${message.user_name}
             </div>
             <div class="Main_chat__content__box__info__timestamps">
               ${message.created_at}
